@@ -1,8 +1,8 @@
 # ansible.softwareraid
-`softwareraid` is an [ansible](http://www.ansible.com) role which: 
+`softwareraid` is an [ansible](http://www.ansible.com) role which:
  * installs mdadm
  * configures raid devices
- * optionally mount the raid devices 
+ * optionally mount the raid devices
 
 
 ## Variables
@@ -12,6 +12,7 @@ software_raid_create_kwargs: "--run" # force the creation if there are any promp
 software_raid_devices:
 - device: /dev/md0
   level: 0
+  chunk: 512k
   components:
     - /dev/sdb
     - /dev/sdc
@@ -22,6 +23,7 @@ software_raid_devices:
   passno: 0
 - device: /dev/md1
   level: 1
+  chunk: 128k
   components:
     - /dev/sdd
     - /dev/sde
@@ -29,7 +31,7 @@ software_raid_devices:
 
 ## Testing
 
-Test against vagrant. Add a yml file and environment variable in the 
+Test against vagrant. Add a yml file and environment variable in the
 make file to tell the Vagrantfile what yml config to run.
 
 ```
