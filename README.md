@@ -12,7 +12,7 @@ software_raid_create_kwargs: "--run" # force the creation if there are any promp
 software_raid_devices:
 - device: /dev/md0
   level: 0
-  chunk: 512k
+  chunk: 512K
   components:
     - /dev/sdb
     - /dev/sdc
@@ -23,7 +23,7 @@ software_raid_devices:
   passno: 0
 - device: /dev/md1
   level: 1
-  chunk: 128k
+  chunk: 128K
   components:
     - /dev/sdd
     - /dev/sde

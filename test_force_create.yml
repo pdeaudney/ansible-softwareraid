@@ -10,7 +10,7 @@
     software_raid_devices:
       - device: /dev/md0
         level: 0
-        chunk: 128k
+        chunk: 128K
         components:
           - /dev/sdb
           - /dev/sdc
